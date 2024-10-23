@@ -25,9 +25,8 @@ class DioClient {
         "name": pet.name,
         "age": pet.age,
         "gender": pet.gender,
-        "image": await MultipartFile.fromFile(
-          pet.image,
-        ),
+        "image":
+            "https://i.imgur.com/USFMhI5.jpeg", // await MultipartFile.fromFile( pet.image,  ),
       });
       Response response = await _dio.post(_baseUrl + '/pets', data: data);
       retrievedPet = Pet.fromJson(response.data);
